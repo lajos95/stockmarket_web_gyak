@@ -24,30 +24,19 @@
         <div class="row">
             <div class="col-sm col-md-3 col-lg-4">
                 <select class="form-select" id="stock-select">
-                    <option value="" selected>Válassz egy részvényt...</option>
-                    <option value="apple">Apple</option>
-                    <option value="microsoft">Microsoft</option>
-                    <option value="google">Google</option>
+                    <option value="0" selected>Válassz egy részvényt...</option>
+                    <option value="AAPL">Apple</option>
+                    <option value="MSFT">Microsoft</option>
+                    <option value="GOOGL">Google</option>
                 </select>
             </div>
-            <div class="col-sm col-md-9 col-lg-8">
-                <div id="apple" class="stock-div hidden">
-                    <p>Current price of Apple: <span id="apple-price"></span></p>
-                    <p>Price change: <span id="apple-price-change"></span></p>
-                    <p>Price change percentage: <span id="apple-price-change-percent"></span></p>
-                    <p>Previous close: <span id="apple-previous-close"></span></p>
-                </div>
-                <div id="microsoft" class="stock-div hidden">
-                    <p>Current price of Microsoft: <span id="microsoft-price"></span></p>
-                    <p>Price change: <span id="microsoft-price-change"></span></p>
-                    <p>Price change percentage: <span id="microsoft-price-change-percent"></span></p>
-                    <p>Previous close: <span id="microsoft-previous-close"></span></p>
-                </div>
-                <div id="google" class="stock-div hidden">
-                    <p>Current price of Google: <span id="google-price"></span></p>
-                    <p>Price change: <span id="google-price-change"></span></p>
-                    <p>Price change percentage: <span id="google-price-change-percent"></span></p>
-                    <p>Previous close: <span id="google-previous-close"></span></p>
+            <div class="col-sm col-md-9 col-lg-8" id="stock-display">
+                <div id="stock-card">
+                    <p id="stock-name"></p>
+                    <p id="stock-price"></p>
+                    <p id="stock-change"></p>
+                    <p id="stock-change-percent"></p>
+                    <p id="stock-previous-close"></p>
                 </div>
             </div>
         </div>
