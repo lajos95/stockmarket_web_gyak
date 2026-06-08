@@ -45,20 +45,24 @@ async function getStockPrice() {
 }
 
 stockChange.addEventListener('change', function() {
-  const selectedStock = stockChange.value;
-    if (selectedStock === "1") {
-      getStockPrice();
-    } else {
-      // Handle other stock selections if needed
+  const selectedStockDiv = document.querySelectorAll('.stock-div');
+
+  selectedStockDiv.forEach(div => {
+    div.classList.add('hidden');
+    div.classList.remove('visible');
+  });
+
+  const choosenStock = this.value;
+    if (choosenStock) {
+      const selectedDiv = document.getElementById(choosenStock);
+      if (selectedDiv) {
+        selectedDiv.classList.remove('hidden');
+        selectedDiv.classList.add('visible');
+      }
     }
 });
 
-
-
-
-
-
-  getStockPrice();
+getStockPrice();
 
 /*import { ApiClient, DefaultApi } from 'finnhub';
 

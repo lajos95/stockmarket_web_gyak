@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container text-center">
         <h1>Bootstrap 5</h1>
@@ -13,17 +25,29 @@
             <div class="col-sm col-md-3 col-lg-4">
                 <select class="form-select" id="stock-select">
                     <option value="" selected>Válassz egy részvényt...</option>
-                    <option value="1">Apple</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
+                    <option value="apple">Apple</option>
+                    <option value="microsoft">Microsoft</option>
+                    <option value="google">Google</option>
                 </select>
             </div>
             <div class="col-sm col-md-9 col-lg-8">
-                <div id="apple">
-                <p>Current price of Apple: <span id="apple-price"></span></p>
-                <p>Price change: <span id="apple-price-change"></span></p>
-                <p>Price change percentage: <span id="apple-price-change-percent"></span></p>
-                <p>Previous close: <span id="apple-previous-close"></span></p>
+                <div id="apple" class="stock-div hidden">
+                    <p>Current price of Apple: <span id="apple-price"></span></p>
+                    <p>Price change: <span id="apple-price-change"></span></p>
+                    <p>Price change percentage: <span id="apple-price-change-percent"></span></p>
+                    <p>Previous close: <span id="apple-previous-close"></span></p>
+                </div>
+                <div id="microsoft" class="stock-div hidden">
+                    <p>Current price of Microsoft: <span id="microsoft-price"></span></p>
+                    <p>Price change: <span id="microsoft-price-change"></span></p>
+                    <p>Price change percentage: <span id="microsoft-price-change-percent"></span></p>
+                    <p>Previous close: <span id="microsoft-previous-close"></span></p>
+                </div>
+                <div id="google" class="stock-div hidden">
+                    <p>Current price of Google: <span id="google-price"></span></p>
+                    <p>Price change: <span id="google-price-change"></span></p>
+                    <p>Price change percentage: <span id="google-price-change-percent"></span></p>
+                    <p>Previous close: <span id="google-previous-close"></span></p>
                 </div>
             </div>
         </div>
@@ -37,10 +61,13 @@
             <div class="col-sm col-md-2 col-lg-2 col-xl-1">
                 <p>Additional content for the sidebar.</p>
             </div>
-        </div>    
+        </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
     <script src="stock.js"></script>
 </body>
+
 </html>
