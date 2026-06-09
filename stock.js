@@ -59,14 +59,15 @@ function getMarketNews() {
   fetch('https://finnhub.io/api/v1/news?category=general&token=' + api_key)
     .then(response => response.json())
     .then(data => {
-      document.querySelectorAll('.news').forEach((newsElement, index) => {
+      document.querySelectorAll('.news').forEach((_, index) => {
+        let dateString = new Date(data[index].datetime * 1000).toLocaleString();
         if (index < 4) {
-          newsElement.querySelector('h4').textContent = data[index].headline;
-          newsElement.querySelector('h6').textContent = data[index].datetime;
-          newsElement.querySelector('img').src = data[index].image;
-          newsElement.querySelector('p').textContent = data[index].summary;
-          newsElement.querySelector('p:nth-of-type(1)').textContent = "Source: " + data[index].source;
-          newsElement.querySelector('a').href = data[index].url;
+          document.getElementById(`news-${index + 1}-headline`).textContent = data[index].headline;
+          document.getElementById(`news-${index + 1}-datetime`).textContent = dateString;
+          document.getElementById(`news-${index + 1}-image`).src = data[index].image;
+          document.getElementById(`news-${index + 1}-summary`).textContent = data[index].summary;
+          document.getElementById(`news-${index + 1}-source`).textContent = "Source: " + data[index].source;
+          document.getElementById(`news-${index + 1}-url`).href = data[index].url;
         }
       });
     });
