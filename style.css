@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #173baf;
+  color: #ffffff;
+}
+
+.container {
+  padding: 20px;
+}
+
+.news {
+  background-color: rgb(28.9242424242, 74.196969697, 220.0757575758);
+  color: #ffffff;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}/*# sourceMappingURL=style.css.map */

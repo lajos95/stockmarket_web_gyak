@@ -32,6 +32,7 @@ function getCompanyDetails(ticker) {
         document.getElementById('company-name').textContent = company.name;
         document.getElementById('company-founded').textContent = `Founded: ${company.founded}`;
         document.getElementById('company-desc').textContent = company.description;
+        document.getElementById('company-founder-img').src = company.founder;
       }
     })
     .catch(error => {
