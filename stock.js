@@ -1,5 +1,5 @@
 const api_key = "d8h7pdhr01qhjpmqvhm0d8h7pdhr01qhjpmqvhmg";
-
+let stockDisplay = document.getElementById('stock-display');
 let stockName = document.getElementById('stock-name');
 let stockPrice = document.getElementById('stock-price');
 let stockChange = document.getElementById('stock-change');
@@ -20,19 +20,36 @@ async function getStockPrice(ticker) {
   } catch (error) {
     console.error('Error fetching stock price:', error);
   }
-}
+};
+
+function getCompanyDetails(ticker) {
+  fetch('companies.json')
+    .then(response => response.json())
+    .then(data => {
+      const company = data[ticker];
+      if (company) {
+        document.getElementById('company-name').textContent = company.name;
+        document.getElementById('company-founded').textContent = `Founded: ${company.founded}`;
+        document.getElementById('company-desc').textContent = company.description;
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching company details:', error);
+    });
+};
 
 stockSelect.addEventListener('change', function () {
-  const selectedStockDiv = document.querySelectorAll('.stock-div');
-
   const choosenStock = this.value;
-  if (choosenStock.value === 0) {
-    document.getElementById('stock-display').textContent = "Válassz egy részvényt...";
+  if (choosenStock) {
+    getStockPrice(choosenStock);
+    getCompanyDetails(choosenStock);
+    stockDisplay.classList.remove('hidden');
+  } else if (choosenStock === "") {
+    stockName.textContent = "";
+    stockPrice.textContent = "";
+    stockChange.textContent = "";
+    stockChangePercent.textContent = "";
+    stockPreviousClose.textContent = "";
+    stockDisplay.classList.add('hidden');
   }
-    /*const selectedDiv = document.getElementById(choosenStock);
-    if (selectedDiv) {
-      selectedDiv.classList.remove('hidden');
-      selectedDiv.classList.add('visible');
-    }*/
-  getStockPrice(choosenStock);
 });
