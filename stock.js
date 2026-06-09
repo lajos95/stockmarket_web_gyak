@@ -1,4 +1,5 @@
 const api_key = "d8h7pdhr01qhjpmqvhm0d8h7pdhr01qhjpmqvhmg";
+
 let stockDisplay = document.getElementById('stock-display');
 let stockName = document.getElementById('stock-name');
 let stockPrice = document.getElementById('stock-price');
@@ -44,7 +45,7 @@ stockSelect.addEventListener('change', function () {
     getStockPrice(choosenStock);
     getCompanyDetails(choosenStock);
     stockDisplay.classList.remove('hidden');
-  } else if (choosenStock === "") {
+  } else {
     stockName.textContent = "";
     stockPrice.textContent = "";
     stockChange.textContent = "";
@@ -53,3 +54,22 @@ stockSelect.addEventListener('change', function () {
     stockDisplay.classList.add('hidden');
   }
 });
+
+function getMarketNews() {
+  fetch('https://finnhub.io/api/v1/news?category=general&token=' + api_key)
+    .then(response => response.json())
+    .then(data => {
+      document.querySelectorAll('.news').forEach((newsElement, index) => {
+        if (index < 4) {
+          newsElement.querySelector('h4').textContent = data[index].headline;
+          newsElement.querySelector('h6').textContent = data[index].datetime;
+          newsElement.querySelector('img').src = data[index].image;
+          newsElement.querySelector('p').textContent = data[index].summary;
+          newsElement.querySelector('p:nth-of-type(1)').textContent = "Source: " + data[index].source;
+          newsElement.querySelector('a').href = data[index].url;
+        }
+      });
+    });
+}
+
+getMarketNews();
