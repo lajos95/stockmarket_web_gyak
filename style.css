@@ -12,11 +12,25 @@ body {
 }
 
 .news {
-  background-color: rgb(28.9242424242, 74.196969697, 220.0757575758);
+  background-color: rgb(27.7393939394, 71.1575757576, 211.0606060606);
   color: #ffffff;
+  border: none;
   border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   padding: 15px;
   margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.news:hover {
+  background-color: rgb(46.8560606061, 89.6742424242, 227.6439393939);
+  transition: background-color 0.3s ease;
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-body {
+  padding: 20px;
 }
 
 .hidden {
@@ -41,6 +55,12 @@ body {
   -ms-transform: translate(-50%, -50%);
 }
 
+.select-div {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 #company-founder-container {
   position: relative;
 }
@@ -55,4 +75,33 @@ body {
   opacity: 1;
   transition: 0.5s ease;
   backface-visibility: hidden;
+}
+
+.custom-dashboard-panel {
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.custom-select-dark {
+  background-color: rgba(15, 32, 90, 0.8) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px;
+  padding: 10px 15px;
+}
+.custom-select-dark option {
+  background-color: #173baf;
+  color: #ffffff;
+}
+.custom-select-dark:focus {
+  border-color: #ffc107;
+  box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+}
+
+@media (min-width: 768px) {
+  .border-start-md {
+    border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
 }/*# sourceMappingURL=style.css.map */

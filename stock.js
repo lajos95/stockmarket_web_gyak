@@ -112,7 +112,7 @@ function recommendTrends(ticker) {
           }
         }
       });
-      document.getElementById('company-trends').textContent = `Analyst Recommendations for ${ticker} stock`;
+      document.getElementById('company-trends').textContent = `Analysts Recommendations for ${ticker} stock`;
 
     });
 }
