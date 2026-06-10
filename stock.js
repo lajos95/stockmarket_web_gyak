@@ -36,6 +36,8 @@ function getCompanyDetails(ticker) {
         document.getElementById('company-founded').textContent = `Founded: ${company.founded}`;
         document.getElementById('company-desc').textContent = company.description;
         document.getElementById('company-founder-img').src = company.founder;
+        document.getElementById('company-founder-name').textContent = `Founder: ${company['founder-name-1']}`;
+        document.getElementById('company-founder-name').href = company['founder-url'];
       }
     })
     .catch(error => {

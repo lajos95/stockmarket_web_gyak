@@ -3,18 +3,24 @@
         "name": "Apple Inc.",
         "description": "Apple Inc. is an American multinational technology company that designs, manufactures, and markets consumer electronics, software, and online services. It is known for its innovative products such as the iPhone, iPad, Mac computers, Apple Watch, and Apple TV. The company also offers a range of services including the App Store, Apple Music, iCloud, and Apple Pay.",
         "founded": "1976",
-        "founder": "https://upload.wikimedia.org/wikipedia/commons/5/51/Steve_Jobs_Headshot_2010_%28cropped_4%29.jpg"
+        "founder-name-1": "Steve Jobs",
+        "founder": "https://upload.wikimedia.org/wikipedia/commons/5/51/Steve_Jobs_Headshot_2010_%28cropped_4%29.jpg",
+        "founder-url": "https://en.wikipedia.org/wiki/Steve_Jobs"
     },
     "MSFT": {
         "name": "Microsoft Corporation",
         "description": "Microsoft Corporation is an American multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, and personal computers. It is one of the largest software companies in the world and offers a wide range of products and services, including Windows, Office, Azure, and Xbox. The company was founded by Bill Gates and Paul Allen in 1975 and has since become a global leader in various industries.",
         "founded": "1975",
-        "founder": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Bill_Gates_at_the_European_Commission_-_P067383-987995_%28cropped%29_5.jpg"
+        "founder-name-1": "Bill Gates",
+        "founder": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Bill_Gates_at_the_European_Commission_-_P067383-987995_%28cropped%29_5.jpg",
+        "founder-url": "https://en.wikipedia.org/wiki/Bill_Gates"
     },
     "GOOGL": {
         "name": "Alphabet Inc.",
         "description": "Alphabet Inc. is an American multinational conglomerate that serves as the parent company of Google and several other subsidiaries. It was created in 2015 to restructure Google's various businesses and ventures. Alphabet's subsidiaries include Google, YouTube, Waymo (self-driving cars), Verily (life sciences), and many others. The company focuses on technology, innovation, and research in various fields.",
         "founded": "2015",
-        "founder": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Larry_Page_in_the_European_Parliament%2C_17.06.2009_%28cropped%29.jpg"
+        "founder-name-1": "Larry Page",
+        "founder": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Larry_Page_in_the_European_Parliament%2C_17.06.2009_%28cropped%29.jpg",
+        "founder-url": "https://en.wikipedia.org/wiki/Larry_Page"
     }
 }
