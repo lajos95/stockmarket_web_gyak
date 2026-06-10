@@ -3,9 +3,12 @@ $bg-color-primary: #173baf;
 $color-secondary: #212529;
 $color-primary: #ffffff;
 
+$justify--content: justify;
+
 * {
     box-sizing: border-box;
 }
+
 body {
     background-color: $bg-color-primary;
     color: $color-primary;
@@ -14,6 +17,7 @@ body {
 .container {
     padding: 20px;
 }
+
 .news {
     background-color: lighten($bg-color-primary, 10%);
     color: $color-primary;
@@ -21,10 +25,15 @@ body {
     padding: 15px;
     margin-bottom: 20px;
 }
-.hidden {
-            display: none;
-        }
 
-        .visible {
-            display: block;
-        }
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.text-justify {
+    text-align: $justify--content;
+}

@@ -25,4 +25,8 @@ body {
 
 .visible {
   display: block;
+}
+
+.text-justify {
+  text-align: justify;
 }/*# sourceMappingURL=style.css.map */

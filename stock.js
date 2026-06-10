@@ -7,6 +7,9 @@ let stockChange = document.getElementById('stock-change');
 let stockChangePercent = document.getElementById('stock-change-percent');
 let stockPreviousClose = document.getElementById('stock-previous-close');
 let stockSelect = document.getElementById('stock-select');
+let companyTrends = document.getElementById('company-trends');
+
+let myChart = null;
 
 async function getStockPrice(ticker) {
   try {
@@ -45,6 +48,7 @@ stockSelect.addEventListener('change', function () {
   if (choosenStock) {
     getStockPrice(choosenStock);
     getCompanyDetails(choosenStock);
+    recommendTrends(choosenStock);
     stockDisplay.classList.remove('hidden');
   } else {
     stockName.textContent = "";
@@ -74,4 +78,44 @@ function getMarketNews() {
     });
 }
 
+function recommendTrends(ticker) {
+  fetch(`https://finnhub.io/api/v1/stock/recommendation?symbol=${ticker}&token=${api_key}`)
+    .then(response => response.json())
+    .then(data => {
+      let reversedData = data.slice(0, 4).reverse();
+      if (myChart) {
+        myChart.destroy();
+      }
+      myChart = new Chart(document.getElementById('stock-chart'), {
+        type: 'bar',
+        data: {
+          labels: reversedData.map(item => item.period),
+          datasets: [
+            { backgroundColor: 'rgba(153, 102, 255, 0.5)', label: 'Strong Sell', data: reversedData.map(item => item.strongSell) },
+            { backgroundColor: 'rgba(255, 99, 132, 0.5)', label: 'Sell', data: reversedData.map(item => item.sell) },
+            { backgroundColor: 'rgba(255, 206, 86, 0.5)', label: 'Hold', data: reversedData.map(item => item.hold) },
+            { backgroundColor: 'rgba(54, 162, 235, 0.5)', label: 'Buy', data: reversedData.map(item => item.buy) },
+            { backgroundColor: 'rgba(75, 192, 192, 0.5)', label: 'Strong Buy', data: reversedData.map(item => item.strongBuy) },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            x: {
+              stacked: true,
+            },
+            y: {
+              stacked: true,
+            }
+          }
+        }
+      });
+      document.getElementById('company-trends').textContent = `Analyst Recommendations for ${ticker} stock`;
+
+    });
+}
+
 getMarketNews();
+getStockPrice(stockSelect.value);
+getCompanyDetails(stockSelect.value);
+recommendTrends(stockSelect.value);
