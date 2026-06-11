@@ -45,12 +45,45 @@ function getCompanyDetails(ticker) {
     });
 };
 
+function getStockNews(ticker) {
+  const today = new Date();
+  const oneMonthAgo = new Date(today);
+  oneMonthAgo.setMonth(today.getMonth() - 4);
+  const fromDate = oneMonthAgo.toISOString().split('T')[0];
+  const toDate = today.toISOString().split('T')[0];
+
+  fetch(`https://finnhub.io/api/v1/company-news?symbol=${ticker}&from=${fromDate}&to=${toDate}&token=${api_key}`)
+    .then(response => response.json())
+    .then(data => {
+      if (!data || data.length === 0) {
+        document.querySelectorAll('.company-news').forEach((companycards) => {
+          companycards.style.opacity = "0.5";
+        });
+        return;
+      }
+
+      document.querySelectorAll('.company-news').forEach((_, index) => {
+        let dateString = new Date(data[index].datetime * 1000).toLocaleString();
+        if (index < 4 && data[index]) {
+          document.getElementById(`company-${index + 1}-headline`).textContent = data[index].headline;
+          document.getElementById(`company-${index + 1}-datetime`).textContent = dateString;
+          document.getElementById(`company-${index + 1}-image`).src = data[index].image;
+          document.getElementById(`company-${index + 1}-summary`).textContent = data[index].summary;
+          document.getElementById(`company-${index + 1}-source`).textContent = "Source: " + data[index].source;
+          document.getElementById(`company-${index + 1}-url`).href = data[index].url;
+          document.querySelectorAll('.company-news')[index].style.opacity = "1";
+        }
+      });
+    });
+}
+
 stockSelect.addEventListener('change', function () {
   const choosenStock = this.value;
   if (choosenStock) {
     getStockPrice(choosenStock);
     getCompanyDetails(choosenStock);
     recommendTrends(choosenStock);
+    getStockNews(choosenStock);
     stockDisplay.classList.remove('hidden');
   } else {
     stockName.textContent = "";
@@ -119,5 +152,6 @@ function recommendTrends(ticker) {
 
 getMarketNews();
 getStockPrice(stockSelect.value);
+getStockNews(stockSelect.value);
 getCompanyDetails(stockSelect.value);
 recommendTrends(stockSelect.value);
