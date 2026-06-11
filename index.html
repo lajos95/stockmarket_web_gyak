@@ -14,7 +14,7 @@
 <body>
     <div class="container text-center">
         <h1>Recent market news from around the world</h1>
-        <navbar class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark rounded-4 shadow-lg mb-4">
+        <navbar class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark rounded-4 shadow-lg mt-4 mb-4">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Stock Market Insights</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -27,7 +27,7 @@
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#news">News</a>
+                            <a class="nav-link" href="#world-news">News</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#stock-select">Stocks</a>
@@ -39,7 +39,7 @@
                 </div>
             </div>
         </navbar>
-        <div class="row g-4 match-heights">
+        <div class="row g-4 match-heights" id="world-news">
             <div class="col-md-12 col-lg-6 col-xl">
                 <div class="news h-100 d-flex flex-column" data-news-id="1">
                     <div class="news-image-wrapper">
@@ -111,7 +111,7 @@
 
                         <div class="col-md-5 text-md-start mb-4 mb-md-0 pe-md-4">
                             <label for="stock-select" class="form-label fw-bold mb-2 fs-5 text-white"><i
-                                    class="bi bi-graph-up"></i> Select Stock
+                                    class="bi bi-graph-up"></i> Select a stock
                                 for more information</label>
                             <select class="form-select custom-select-dark" id="stock-select">
                                 <option value="AAPL" selected>Apple (AAPL)</option>
@@ -213,16 +213,28 @@
             <hr class="border-light my-4">
         </div>
         <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2" id="company-founder-container">
-                <img id="company-founder-img" src="" class="img-fluid">
-                <div class="middle">
-                    <a href="#" target="_blank" class="btn btn-outline-light" id="company-founder-name"></a>
+            <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">
+                <div class="container" id="company-founder-container"><img id="company-founder-img" src=""
+                        class="img-fluid">
+
+                    <div class="middle">
+                        <a href="#" target="_blank" class="btn btn-outline-light" id="company-founder-name"></a>
+                    </div>
+                </div>
+                <div class="container" id="company-founder-container-2"><img id="company-founder-img-2" src=""
+                        class="img-fluid">
+
+                    <div class="middle">
+                        <a href="#" target="_blank" class="btn btn-outline-light" id="company-founder-name-2"></a>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5">
                 <h1 id="company-name"></h1>
                 <h3 id="company-founded"></h3>
                 <p class="text-justify" id="company-desc"></p>
+                <h4>The short history of the company</h4>
+                <p class="text-justify" id="company-history"></p>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5">
                 <h4 id="company-trends"></h4>

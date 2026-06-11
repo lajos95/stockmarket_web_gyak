@@ -35,9 +35,13 @@ function getCompanyDetails(ticker) {
         document.getElementById('company-name').textContent = company.name;
         document.getElementById('company-founded').textContent = `Founded: ${company.founded}`;
         document.getElementById('company-desc').textContent = company.description;
+        document.getElementById('company-history').textContent = company.history;
         document.getElementById('company-founder-img').src = company.founder;
+        document.getElementById('company-founder-img-2').src = company[founder-2];
         document.getElementById('company-founder-name').textContent = `Founder: ${company['founder-name-1']}`;
+        document.getElementById('company-founder-name-2').textContent = `Founder: ${company['founder-name-2']}`;
         document.getElementById('company-founder-name').href = company['founder-url'];
+        document.getElementById('company-founder-name-2').href = company['founder-2-url'];
       }
     })
     .catch(error => {

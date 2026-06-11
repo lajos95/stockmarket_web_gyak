@@ -118,13 +118,13 @@ body {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%)
 }
- .select-div {
+.select-div {
     background-color: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#company-founder-container {
+#company-founder-container, #company-founder-container-2 {
   position: relative;
   &:hover .middle {
     opacity: 1;
@@ -132,9 +132,12 @@ body {
   &:hover #company-founder-img {
     opacity: 0.3;
   }
+  &:hover #company-founder-img-2 {
+    opacity: 0.3;
+  }
 }
 
-#company-founder-img {
+#company-founder-img, #company-founder-img {
     opacity: 1;
     transition: .5s ease;
     backface-visibility: hidden;
