@@ -123,20 +123,17 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#company-founder-container, #company-founder-container-2 {
+#company-founder-container {
   position: relative;
 }
-#company-founder-container:hover .middle, #company-founder-container-2:hover .middle {
+#company-founder-container:hover .middle {
   opacity: 1;
 }
-#company-founder-container:hover #company-founder-img, #company-founder-container-2:hover #company-founder-img {
-  opacity: 0.3;
-}
-#company-founder-container:hover #company-founder-img-2, #company-founder-container-2:hover #company-founder-img-2 {
+#company-founder-container:hover #company-founder-img {
   opacity: 0.3;
 }
 
-#company-founder-img, #company-founder-img {
+#company-founder-img {
   opacity: 1;
   transition: 0.5s ease;
   backface-visibility: hidden;
@@ -169,4 +166,19 @@ body {
   .border-start-md {
     border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
   }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.news, .custom-dashboard-panel, .company-news, .company-inf {
+  animation: fadeInUp linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
 }/*# sourceMappingURL=style.css.map */
